@@ -15,7 +15,7 @@ import { OrganizationRequestModule } from './organization_request/organization_r
 		AuthModule,
 		ProfileModule,
 		UserModule,
-		OrganizationTypeModule, 
+		OrganizationTypeModule,
 		ConnectionTypeModule,
 		OrganizationRequestModule
 	]

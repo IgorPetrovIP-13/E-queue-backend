@@ -22,7 +22,9 @@ export class AuthService {
 	async signUp(data: CreateUserDTO): Promise<UserWithTokens> {
 		const userExists = await this.userService.findByEmail(data.email)
 		if (userExists) {
-			throw new BadRequestException('Користувач вже існує, спробуйте інший email')
+			throw new BadRequestException(
+				'Користувач вже існує, спробуйте інший email'
+			)
 		}
 
 		const hash = await this.hashData(data.password)

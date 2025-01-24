@@ -1,4 +1,4 @@
-import { User } from "src/app/user/user.schema"
+import { User } from 'src/app/user/user.schema'
 
 export type UserWithTokens = {
 	user: User

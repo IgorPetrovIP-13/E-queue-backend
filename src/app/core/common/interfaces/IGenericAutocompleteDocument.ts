@@ -1,6 +1,6 @@
-import { Document } from "mongoose";
+import { Document } from 'mongoose'
 
 export interface IGenericAutocompleteDocument extends Document {
-  _id: string;
-  title: string;
+	_id: string
+	title: string
 }

@@ -16,7 +16,10 @@ export class UserRepository {
 	}
 
 	async update(id: string, data: UpdateUserDTO): Promise<User> {
-		return this.userModel.findByIdAndUpdate(id, data, { new: true }).lean().exec()
+		return this.userModel
+			.findByIdAndUpdate(id, data, { new: true })
+			.lean()
+			.exec()
 	}
 
 	async findById(id: Types.ObjectId): Promise<User> {

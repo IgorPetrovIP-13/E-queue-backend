@@ -14,7 +14,10 @@ export class OrganizationRequest {
 	@Prop({ default: null })
 	organization_logo: string | null
 
-	@Prop({ type: MongooseSchema.Types.ObjectId, ref: OrganizationTypeCollection })
+	@Prop({
+		type: MongooseSchema.Types.ObjectId,
+		ref: OrganizationTypeCollection
+	})
 	organization_type_id: MongooseSchema.Types.ObjectId
 
 	@Prop()
@@ -32,7 +35,7 @@ export class OrganizationRequest {
 	@Prop({ default: null })
 	organization_website: string | null
 
-	@Prop({default: []})
+	@Prop({ default: [] })
 	attachments: string[]
 
 	@Prop({ type: MongooseSchema.Types.ObjectId, ref: UserCollection })

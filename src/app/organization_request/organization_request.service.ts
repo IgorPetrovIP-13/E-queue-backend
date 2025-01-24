@@ -10,7 +10,9 @@ export class OrganizationRequestService {
 		private readonly organizationRequestRepository: OrganizationRequestRepostitory
 	) {}
 
-	async create(data: CreateOrganizationRequestWithUidDTO): Promise<OrganizationRequest> {
+	async create(
+		data: CreateOrganizationRequestWithUidDTO
+	): Promise<OrganizationRequest> {
 		return await this.organizationRequestRepository.create(data)
 	}
 

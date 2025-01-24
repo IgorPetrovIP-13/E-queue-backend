@@ -22,7 +22,7 @@ export class OrganizationRequestController {
 		@Req() req: IUserRequest
 	) {
 		const userId = req.user.sub
-		return this.organizationRequestService.create({userId, ...data })
+		return this.organizationRequestService.create({ userId, ...data })
 	}
 
 	@Get('my-requests')

@@ -11,17 +11,11 @@ export const zodObjectId = z.custom<Types.ObjectId>(
 )
 
 export function zodStringNullable(minLength: number, maxLength: number) {
-	return z.union([
-		z.string().min(minLength).max(maxLength),
-		z.null()
-	])
+	return z.union([z.string().min(minLength).max(maxLength), z.null()])
 }
 
 export const zodFileLinksArray = z.array(z.string().url()).max(10)
 
-export const zodUrlNullable = z.union([
-	z.null(),
-	z.string().url()
-])
+export const zodUrlNullable = z.union([z.null(), z.string().url()])
 
 export const zodUrlRequired = z.string().url()

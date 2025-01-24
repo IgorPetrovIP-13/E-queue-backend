@@ -1,5 +1,5 @@
-import { Types } from "mongoose"
-import { RoleEnum } from "../enums/role-enum"
+import { Types } from 'mongoose'
+import { RoleEnum } from '../enums/role-enum'
 
 export type JwtPayload = {
 	sub: Types.ObjectId

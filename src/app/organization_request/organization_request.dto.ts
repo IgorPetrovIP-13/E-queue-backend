@@ -1,5 +1,10 @@
 import { z } from 'zod'
-import { zodFileLinksArray, zodObjectId, zodStringNullable, zodUrlNullable } from '../core/common/constants/zod.constants';
+import {
+	zodFileLinksArray,
+	zodObjectId,
+	zodStringNullable,
+	zodUrlNullable
+} from '../core/common/constants/zod.constants'
 
 export const createOrganizationRequestValidationSchema = z
 	.object({
@@ -18,10 +23,11 @@ export type CreateOrganizationRequestDTO = z.infer<
 	typeof createOrganizationRequestValidationSchema
 >
 
-export const CreateOrganizationRequestWithUidValidationSchema = createOrganizationRequestValidationSchema.extend({
-  userId: zodObjectId,
-});
+export const CreateOrganizationRequestWithUidValidationSchema =
+	createOrganizationRequestValidationSchema.extend({
+		userId: zodObjectId
+	})
 
 export type CreateOrganizationRequestWithUidDTO = z.infer<
-  typeof CreateOrganizationRequestWithUidValidationSchema
->;
+	typeof CreateOrganizationRequestWithUidValidationSchema
+>
