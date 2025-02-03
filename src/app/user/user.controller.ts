@@ -1,9 +1,9 @@
-import { Controller, UseGuards } from '@nestjs/common'
-import { UserService } from './user.service'
-import { AccessTokenGuard } from '../core/common/guards/accessToken.guard'
+import { Controller, UseGuards } from "@nestjs/common";
+import { UserService } from "./user.service";
+import { AccessTokenGuard } from "../core/common/guards/accessToken.guard";
 
 @UseGuards(AccessTokenGuard)
-@Controller('users')
+@Controller("users")
 export class UserController {
-	constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) {}
 }

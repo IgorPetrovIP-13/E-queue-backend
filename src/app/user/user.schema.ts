@@ -1,29 +1,32 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-import { HydratedDocument } from 'mongoose'
-import { RoleEnum } from '../core/common/enums/role-enum'
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { HydratedDocument } from "mongoose";
+import { RoleEnum } from "../core/common/enums/role-enum";
 
-export const UserCollection = 'users'
+export const UserCollection = "users";
 
-export type UserDocument = HydratedDocument<User>
+export type UserDocument = HydratedDocument<User>;
 
 @Schema({ versionKey: false })
 export class User {
-	_id: string
+  _id: string;
 
-	@Prop()
-	name: string
+  @Prop({ default: null })
+  avatar: string | null;
 
-	@Prop()
-	surname: string
+  @Prop()
+  name: string;
 
-	@Prop()
-	email: string
+  @Prop()
+  surname: string;
 
-	@Prop()
-	password: string
+  @Prop()
+  email: string;
 
-	@Prop({ default: RoleEnum.USER })
-	role: `${RoleEnum}`
+  @Prop()
+  password: string;
+
+  @Prop({ default: RoleEnum.USER })
+  role: `${RoleEnum}`;
 }
 
-export const UserSchema = SchemaFactory.createForClass(User)
+export const UserSchema = SchemaFactory.createForClass(User);
