@@ -8,7 +8,7 @@ export class ProfileService {
   constructor(private readonly userService: UserService) {}
 
   async get(userId: Types.ObjectId) {
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password, ...payload } = await this.userService.findById(userId);
     return payload;
   }
