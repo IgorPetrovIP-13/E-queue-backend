@@ -1,3 +1,4 @@
 {
-  "*.ts": "eslint --max-errors=0"
+  "*.js": ["prettier --write", "eslint --fix"],
+  "*.ts": ["prettier --write", "eslint --fix"]
 }
