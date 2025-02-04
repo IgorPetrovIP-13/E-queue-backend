@@ -10,14 +10,14 @@ async function bootstrap() {
 
   app.use(cookieParser());
   app.enableCors({
-    origin: process.env.CLIENT_HOST ?? "http://localhost:5173",
+    origin: process.env.CLIENT_HOST,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true
   });
   app.setGlobalPrefix("api");
   app.useGlobalFilters(new AllExceptionsFilter());
 
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT);
   Logger.log(`Application is running on: ${await app.getUrl()}`);
 }
 
