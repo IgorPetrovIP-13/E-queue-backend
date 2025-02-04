@@ -18,10 +18,14 @@ import { AuthService } from "./auth.service";
 import { SignInDTO, signInValidationSchema } from "./auth.dto";
 import { ZodValidationPipe } from "../common/pipes/validation.pipe";
 import { TokensEnum } from "../common/enums/tokens-enum";
+import { ConfigService } from "../config/config.service";
 
 @Controller("auth")
 export class AuthController {
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private configService: ConfigService
+  ) {}
 
   @Post("signup")
   async signUp(
@@ -67,7 +71,8 @@ export class AuthController {
       httpOnly: true,
       secure: true,
       sameSite: "none",
-      maxAge: 7 * 24 * 60 * 60 * 1000
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+      domain: this.configService.clientHost
     });
   }
 }
