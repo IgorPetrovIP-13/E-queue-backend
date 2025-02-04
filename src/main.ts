@@ -9,7 +9,6 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.use(cookieParser());
-  Logger.log(process.env.CLIENT_HOST);
   app.enableCors({
     origin: process.env.CLIENT_HOST ?? "http://localhost:5173",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -20,6 +19,7 @@ async function bootstrap() {
 
   await app.listen(process.env.PORT ?? 3000);
   Logger.log(`Application is running on: ${await app.getUrl()}`);
+  Logger.log("Client host: ", process.env.CLIENT_HOST);
 }
 
 bootstrap();
