@@ -7,6 +7,10 @@ export class ConfigService extends NestConfigService {
     super();
   }
 
+  get clientDomain() {
+    return this.getOrThrow<string>("CLIENT_DOMAIN");
+  }
+
   get nodeEnv() {
     return this.getOrThrow<string>("NODE_ENV");
   }
